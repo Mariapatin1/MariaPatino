@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria Patino | Product Manager & Builder</title>
+    <title>Maria Patino | Engineering Program Manager</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ============================================
            CSS VARIABLES & RESET
@@ -217,15 +217,36 @@
         .hero-title {
             font-size: 1.2rem;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             font-weight: 400;
+        }
+
+        .hero-certs {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-cert {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.3rem 0.75rem;
+            background: rgba(196, 121, 90, 0.08);
+            border: 1px solid rgba(196, 121, 90, 0.2);
+            border-radius: 50px;
+            font-size: 0.78rem;
+            color: var(--terracotta);
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         .hero-tagline {
             font-size: 1.05rem;
             color: var(--text-light);
             margin-bottom: 2.5rem;
-            max-width: 480px;
+            max-width: 500px;
             line-height: 1.8;
         }
 
@@ -357,6 +378,15 @@
             letter-spacing: -0.02em;
         }
 
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-top: 0.75rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -416,6 +446,7 @@
 
         .about-detail-item:last-child {
             border-bottom: none;
+            padding-bottom: 0;
         }
 
         .about-detail-icon {
@@ -467,6 +498,42 @@
             color: white;
             border-color: var(--terracotta);
             transform: translateY(-2px);
+        }
+
+        /* ============================================
+           METRICS BAR
+           ============================================ */
+        .metrics {
+            background: var(--text-primary);
+            padding: 3.5rem 2rem;
+        }
+
+        .metrics-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .metric-item {
+            padding: 0.5rem;
+        }
+
+        .metric-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.4rem;
+            color: var(--blush);
+            line-height: 1.2;
+            margin-bottom: 0.35rem;
+        }
+
+        .metric-label {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+            letter-spacing: 0.04em;
         }
 
         /* ============================================
@@ -584,6 +651,19 @@
             height: 5px;
             background: var(--blush);
             border-radius: 50%;
+        }
+
+        .timeline-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.75rem;
+            padding: 0.35rem 0.85rem;
+            background: rgba(196, 121, 90, 0.08);
+            border-radius: 50px;
+            font-size: 0.78rem;
+            color: var(--terracotta);
+            font-weight: 600;
         }
 
         /* ============================================
@@ -709,6 +789,29 @@
             opacity: 0.6;
         }
 
+        .project-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .project-feature-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
         /* ============================================
            CONTACT SECTION
            ============================================ */
@@ -814,7 +917,34 @@
         .contact-card p {
             font-size: 0.9rem;
             color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card .contact-availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.85rem;
+            background: rgba(76, 175, 80, 0.08);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: #2e7d32;
+            font-weight: 600;
             margin-bottom: 1.5rem;
+        }
+
+        .availability-dot {
+            width: 7px;
+            height: 7px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
 
         .contact-card .btn {
@@ -931,6 +1061,10 @@
                 justify-content: center;
             }
 
+            .hero-certs {
+                justify-content: center;
+            }
+
             .hero-photo-wrapper {
                 width: 260px;
                 height: 260px;
@@ -941,12 +1075,21 @@
                 gap: 2.5rem;
             }
 
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
             .project-content {
                 grid-template-columns: 1fr;
             }
 
             .project-screenshot {
                 min-height: 280px;
+            }
+
+            .project-features {
+                grid-template-columns: 1fr;
             }
 
             .contact-grid {
@@ -1016,6 +1159,10 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
@@ -1059,9 +1206,13 @@
             <div class="hero-text">
                 <p class="hero-greeting">Hi, I'm</p>
                 <h1 class="hero-name">Maria Patino</h1>
-                <p class="hero-title">Product Manager & Builder</p>
+                <p class="hero-title">Engineering Program Manager</p>
+                <div class="hero-certs">
+                    <span class="hero-cert">PSM I Certified</span>
+                    <span class="hero-cert">Year Up Alum</span>
+                </div>
                 <p class="hero-tagline">
-                    I turn ideas into real products people love. From internal tools at Apple to community-driven platforms, I bring clarity, empathy, and momentum to every project I touch.
+                    I drive complex engineering programs from ambiguity to delivery. Currently managing P0 initiatives and 10+ engineers at Apple, building the processes and tools that help teams ship with confidence.
                 </p>
                 <div class="hero-buttons">
                     <a href="assets/resume.pdf" class="btn btn-primary">
@@ -1083,24 +1234,48 @@
     </section>
 
     <!-- ============================================
+         METRICS BAR
+         ============================================ -->
+    <div class="metrics fade-in">
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <div class="metric-number">4+</div>
+                <div class="metric-label">Concurrent Programs Managed</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">20%</div>
+                <div class="metric-label">Improvement in Delivery Time</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">10+</div>
+                <div class="metric-label">Engineers Coordinated</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">6-Figure</div>
+                <div class="metric-label">Program Budgets Managed</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
          ABOUT SECTION
          ============================================ -->
     <section class="about" id="about">
         <div class="section-container">
             <div class="section-header fade-in">
                 <p class="section-label">About Me</p>
-                <h2 class="section-title">A little about who I am</h2>
+                <h2 class="section-title">Turning ambiguity into action</h2>
             </div>
             <div class="about-content fade-in">
                 <div class="about-text">
                     <p>
-                        Building things that matter is what gets me out of bed in the morning. As a product manager, I live at the intersection of people and technology &mdash; understanding what teams actually need, then making it happen. I've spent the past few years at Apple, where I've shipped internal tools, streamlined engineering workflows, and learned that the best products come from genuinely listening to the people who use them.
+                        Programs don't ship themselves &mdash; people do. I'm an Engineering Program Manager who thrives in the space between strategy and execution, bringing clarity to complex technical initiatives and momentum to the teams behind them. At Apple, I manage P0 programs across Engineering, Product, and Business teams, building Agile processes from the ground up where none existed before.
                     </p>
                     <p>
-                        Before tech, I ran arts festivals, managed co-working spaces, and worked in retail &mdash; all roles that taught me how to read a room, solve problems on the fly, and bring people together around a shared vision. I bring that same energy to every product I build.
+                        My path to tech wasn't traditional. I'm a Year Up alum who started in Apple Retail, worked my way through operations and community management, and earned my way into engineering program management. That non-linear journey is my superpower &mdash; I know how to read a room, solve problems on the fly, and bring people together around a shared goal.
                     </p>
                     <p>
-                        When I'm not shipping features, you'll find me exploring new coffee shops, planning my next travel adventure, or tinkering with side projects that probably involve too many spreadsheets.
+                        I'm PSM I certified, data-driven in my decision-making, and obsessive about building systems that actually work. Whether it's establishing sprint cadences, creating executive dashboards, or building an entire PM assistant app from scratch, I bring ownership and initiative to everything I do.
                     </p>
                 </div>
                 <div class="about-details">
@@ -1108,41 +1283,48 @@
                         <div class="about-detail-icon">&#127968;</div>
                         <div>
                             <div class="about-detail-label">Based in</div>
-                            <div class="about-detail-value">Austin, TX</div>
+                            <div class="about-detail-value">San Francisco Bay Area, CA</div>
                         </div>
                     </div>
                     <div class="about-detail-item">
                         <div class="about-detail-icon">&#128188;</div>
                         <div>
                             <div class="about-detail-label">Focus</div>
-                            <div class="about-detail-value">Product Management & Internal Tools</div>
+                            <div class="about-detail-value">Engineering Program Management</div>
                         </div>
                     </div>
                     <div class="about-detail-item">
                         <div class="about-detail-icon">&#127891;</div>
                         <div>
                             <div class="about-detail-label">Education</div>
-                            <div class="about-detail-value">University of Texas at Austin</div>
+                            <div class="about-detail-value">BA Communication Studies, SF State University</div>
                         </div>
                     </div>
                     <div class="about-detail-item">
-                        <div class="about-detail-icon">&#9749;</div>
+                        <div class="about-detail-icon">&#127942;</div>
                         <div>
-                            <div class="about-detail-label">Fuel</div>
-                            <div class="about-detail-value">Oat milk latte, always</div>
+                            <div class="about-detail-label">Certification</div>
+                            <div class="about-detail-value">Professional Scrum Master I (PSM I)</div>
+                        </div>
+                    </div>
+                    <div class="about-detail-item">
+                        <div class="about-detail-icon">&#128295;</div>
+                        <div>
+                            <div class="about-detail-label">Tools</div>
+                            <div class="about-detail-value">Jira, Radar, Wrike, Airtable, SQL</div>
                         </div>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Product Strategy</span>
+                        <span class="skill-tag">Program Management</span>
                         <span class="skill-tag">Agile / Scrum</span>
-                        <span class="skill-tag">Stakeholder Mgmt</span>
+                        <span class="skill-tag">Stakeholder Management</span>
                         <span class="skill-tag">Roadmapping</span>
-                        <span class="skill-tag">User Research</span>
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">Jira / Radar</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Budget Forecasting</span>
+                        <span class="skill-tag">Risk Management</span>
                         <span class="skill-tag">Cross-functional Leadership</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Process Design</span>
+                        <span class="skill-tag">Executive Reporting</span>
                     </div>
                 </div>
             </div>
@@ -1156,85 +1338,84 @@
         <div class="section-container">
             <div class="section-header fade-in">
                 <p class="section-label">Experience</p>
-                <h2 class="section-title">Where I've been building</h2>
+                <h2 class="section-title">Where I've driven impact</h2>
+                <p class="section-subtitle">From retail floor to engineering war room &mdash; every role shaped how I lead today.</p>
             </div>
             <div class="timeline">
+
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
                         <div class="timeline-date">2024 &ndash; 2026</div>
-                        <h3 class="timeline-role">Technical Project Manager (Contract)</h3>
-                        <p class="timeline-company">Apple &mdash; People Engineering Services</p>
+                        <h3 class="timeline-role">Engineering Program Manager</h3>
+                        <p class="timeline-company">Apple &mdash; People Engineering Services (Contract via Red Oak)</p>
                         <div class="timeline-desc">
                             <ul>
-                                <li>Led sprint planning and delivery for internal engineering tooling across distributed teams</li>
-                                <li>Managed Radar-based workflows, coordinating cross-functional priorities across PES org</li>
-                                <li>Built MiniMe &mdash; an AI-powered PM assistant using Electron, React, and Claude</li>
-                                <li>Drove process improvements that reduced sprint overhead and improved team velocity</li>
+                                <li>Manage P0 programs coordinating 10+ engineers across Engineering, Product, and Business teams</li>
+                                <li>Established Agile methodology and sprint processes from scratch for a team with no prior framework</li>
+                                <li>Built real-time dashboards and reporting cadences that gave leadership full visibility into program health</li>
+                                <li>Own budget forecasting and cost tracking for 6-figure programs across multiple initiatives</li>
+                                <li>Manage 4+ concurrent initiatives with cross-team dependency tracking and risk mitigation</li>
+                                <li>Reduced meeting overhead by 10% while increasing delivery transparency through async reporting</li>
                             </ul>
+                            <span class="timeline-highlight">&#9650; 20% improvement in delivery time</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
                         <div class="timeline-date">2023 &ndash; 2024</div>
-                        <h3 class="timeline-role">Product Management Intern</h3>
-                        <p class="timeline-company">Apple &mdash; Internal Tools</p>
+                        <h3 class="timeline-role">PMO Intern</h3>
+                        <p class="timeline-company">Apple &mdash; People Engineering Services</p>
                         <div class="timeline-desc">
                             <ul>
-                                <li>Supported product lifecycle for internal tooling used by engineering teams</li>
-                                <li>Conducted user research and translated findings into actionable feature requirements</li>
-                                <li>Collaborated with design and engineering to ship iterative improvements</li>
+                                <li>Standardized PMO documentation and established consistent templates across the organization</li>
+                                <li>Launched a vendor budget tracking system that brought visibility to previously untracked spend</li>
+                                <li>Prepared quarterly leadership updates and executive-facing program summaries</li>
+                                <li>Built gate review and release processes that became the team's standard operating procedure</li>
                             </ul>
+                            <span class="timeline-highlight">&#9650; Promoted to full EPM contract role</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
                         <div class="timeline-date">2022 &ndash; 2023</div>
-                        <h3 class="timeline-role">Community Manager</h3>
-                        <p class="timeline-company">Industrious &mdash; Co-Working Spaces</p>
+                        <h3 class="timeline-role">Operations Manager</h3>
+                        <p class="timeline-company">Industrious &mdash; Premium Co-Working</p>
                         <div class="timeline-desc">
                             <ul>
-                                <li>Managed day-to-day operations and member experience for a premium co-working location</li>
-                                <li>Drove member retention through community events, feedback loops, and proactive support</li>
-                                <li>Coordinated with cross-functional teams on space planning and operational improvements</li>
+                                <li>Managed cross-functional operations and member experience for a 500+ member co-working community</li>
+                                <li>Drove data-driven process improvements that achieved and maintained a 94+ NPS score</li>
+                                <li>Coordinated events, vendor relationships, travel logistics, and expense tracking across the location</li>
+                                <li>Built operational efficiency improvements in facilities, hospitality, and community programming</li>
                             </ul>
+                            <span class="timeline-highlight">&#9650; 94+ NPS score maintained</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
-                        <div class="timeline-date">2021 &ndash; 2022</div>
-                        <h3 class="timeline-role">Festival Operations Coordinator</h3>
-                        <p class="timeline-company">Austin Arts Festival</p>
-                        <div class="timeline-desc">
-                            <ul>
-                                <li>Coordinated logistics for large-scale community arts events with 10,000+ attendees</li>
-                                <li>Managed vendor relationships, volunteer teams, and on-site operations</li>
-                                <li>Built project plans and timelines that kept complex multi-stakeholder events on track</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-date">2019 &ndash; 2021</div>
-                        <h3 class="timeline-role">Specialist</h3>
+                        <div class="timeline-date">2019 &ndash; 2022</div>
+                        <h3 class="timeline-role">Technical Specialist</h3>
                         <p class="timeline-company">Apple Retail</p>
                         <div class="timeline-desc">
                             <ul>
-                                <li>Delivered exceptional customer experiences in a high-volume Apple Store</li>
-                                <li>Developed deep product knowledge and communication skills working directly with customers</li>
+                                <li>Delivered technical product expertise across the full Apple ecosystem &mdash; iPhone, iPad, Mac, Watch, and AirPods</li>
+                                <li>Developed deep consumer hardware knowledge and honed customer-facing communication skills</li>
                                 <li>Recognized for top sales performance and mentorship of new team members</li>
                             </ul>
+                            <span class="timeline-highlight">&#9650; Launched career at Apple through Year Up</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1246,27 +1427,55 @@
         <div class="section-container">
             <div class="section-header fade-in">
                 <p class="section-label">Projects</p>
-                <h2 class="section-title">Things I've built</h2>
+                <h2 class="section-title">Built by hand, shipped with purpose</h2>
+                <p class="section-subtitle">I don't just manage products &mdash; I build them.</p>
             </div>
             <div class="project-featured fade-in">
                 <div class="project-content">
                     <div class="project-info">
                         <div class="project-badge">&#9733; Featured Project</div>
                         <h3 class="project-name">MiniMe</h3>
-                        <p class="project-subtitle">AI-Powered PM Assistant</p>
+                        <p class="project-subtitle">AI-Powered PM Assistant &mdash; Desktop App</p>
                         <p class="project-description">
-                            A desktop app I designed and built to supercharge my own PM workflow. MiniMe combines task management, calendar integration, AI-powered chat, Slack message drafting, meeting prep, and a live Radar dashboard &mdash; all in one clean interface. Built from scratch to solve real pain points I experienced every day.
+                            I designed and built MiniMe from scratch to solve real pain points in my daily PM workflow. It's a full desktop application that combines task management, calendar integration, AI-powered chat, Slack message drafting, meeting prep, and a live sprint dashboard &mdash; all in one interface. I owned the entire product lifecycle: problem identification, requirements, architecture, development, and iteration.
                         </p>
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <div class="project-feature-dot"></div>
+                                <span>Live sprint dashboard with Radar API</span>
+                            </div>
+                            <div class="project-feature">
+                                <div class="project-feature-dot"></div>
+                                <span>AI chat powered by Claude</span>
+                            </div>
+                            <div class="project-feature">
+                                <div class="project-feature-dot"></div>
+                                <span>Calendar integration with smart filtering</span>
+                            </div>
+                            <div class="project-feature">
+                                <div class="project-feature-dot"></div>
+                                <span>Slack message drafting assistant</span>
+                            </div>
+                            <div class="project-feature">
+                                <div class="project-feature-dot"></div>
+                                <span>Meeting prep with agenda generation</span>
+                            </div>
+                            <div class="project-feature">
+                                <div class="project-feature-dot"></div>
+                                <span>Built &amp; shipped as macOS DMG</span>
+                            </div>
+                        </div>
                         <div class="project-tech">
                             <span>Electron</span>
-                            <span>React</span>
+                            <span>React 18</span>
                             <span>Node.js</span>
+                            <span>Express</span>
+                            <span>Python</span>
                             <span>Claude AI</span>
                             <span>Radar API</span>
-                            <span>Calendar Integration</span>
                         </div>
                         <a href="#contact" class="btn btn-primary" style="width: fit-content;">
-                            Want to see a demo?
+                            Interested? Let's talk
                         </a>
                     </div>
                     <div class="project-screenshot">
@@ -1288,13 +1497,13 @@
         <div class="section-container">
             <div class="section-header fade-in">
                 <p class="section-label">Contact</p>
-                <h2 class="section-title">Let's connect</h2>
+                <h2 class="section-title">Let's build something together</h2>
             </div>
             <div class="contact-grid fade-in">
                 <div class="contact-text">
-                    <h3>I'd love to hear from you</h3>
+                    <h3>Currently open to new opportunities</h3>
                     <p>
-                        Whether you're looking for a product manager who can also build, want to chat about a project idea, or just want to say hi &mdash; my inbox is always open.
+                        I'm looking for my next full-time role in Engineering Program Management, Technical PM, or Operations PM. If you're building something that matters and need someone who brings clarity, process, and momentum &mdash; I'd love to connect.
                     </p>
                     <div class="contact-links">
                         <a href="mailto:marpatino@live.com" class="contact-link">
@@ -1303,15 +1512,15 @@
                         </a>
                         <a href="https://www.linkedin.com/in/maria-patino-manjarres" target="_blank" rel="noopener" class="contact-link">
                             <span class="contact-link-icon">&#128279;</span>
-                            <span>LinkedIn</span>
+                            <span>linkedin.com/in/maria-patino-manjarres</span>
                         </a>
                         <a href="https://github.com/Mariapatin1" target="_blank" rel="noopener" class="contact-link">
                             <span class="contact-link-icon">&#128187;</span>
-                            <span>GitHub</span>
+                            <span>github.com/Mariapatin1</span>
                         </a>
                         <span class="contact-link" style="cursor: default;">
                             <span class="contact-link-icon">&#128205;</span>
-                            <span>Austin, TX</span>
+                            <span>San Francisco Bay Area, CA</span>
                         </span>
                     </div>
                 </div>
@@ -1321,7 +1530,11 @@
                         <span>&#128075;</span>
                     </div>
                     <h4>Maria Patino</h4>
-                    <p>Product Manager & Builder</p>
+                    <p>Engineering Program Manager</p>
+                    <div class="contact-availability">
+                        <span class="availability-dot"></span>
+                        Open to opportunities
+                    </div>
                     <a href="mailto:marpatino@live.com" class="btn btn-primary">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                         Send me an email
@@ -1335,7 +1548,7 @@
          FOOTER
          ============================================ -->
     <footer>
-        <p>&copy; 2026 Maria Patino. Built with care and too much coffee.</p>
+        <p>&copy; 2026 Maria Patino &mdash; Designed and built with intention.</p>
     </footer>
 
     <!-- ============================================
