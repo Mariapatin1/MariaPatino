@@ -195,6 +195,62 @@
             width: 100%;
         }
 
+        .hero-name-row {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-columns {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px) scale(0.97);
+            animation: staggerIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+        }
+
+        @keyframes staggerIn {
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .hero-memoji {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--bg-2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 3px solid var(--bg-3);
+            position: relative;
+        }
+
+        .hero-memoji img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-memoji::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: var(--grad-hero);
+            z-index: -1;
+            opacity: 0.4;
+            filter: blur(15px);
+        }
+
         /* Decorative gradient blobs */
         .hero-blob {
             position: absolute;
@@ -253,19 +309,24 @@
 
         .hero-name {
             font-family: 'Instrument Serif', serif;
-            font-size: clamp(4rem, 12vw, 10rem);
+            font-size: clamp(3.5rem, 10vw, 8rem);
             font-weight: 400;
-            line-height: 0.92;
-            letter-spacing: -0.04em;
+            line-height: 1;
+            letter-spacing: -0.02em;
             color: var(--dark);
             margin-bottom: 0.3em;
             position: relative;
             z-index: 1;
         }
 
+        .hero-name .gradient-text {
+            padding-right: 0.05em;
+        }
+
         .hero-name .line {
             display: block;
-            overflow: hidden;
+            overflow: visible;
+            padding-bottom: 0.05em;
         }
 
         .hero-name .line-inner {
@@ -1163,6 +1224,17 @@
             section { padding: 5rem 2rem; }
             nav .nav-inner { padding: 0 2rem; }
             .hero { padding: 7rem 2rem 4rem; }
+            .hero-inner { text-align: center; }
+            .hero-columns {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-visual { order: -1; }
+            .hero-memoji { width: 240px; height: 240px; margin: 0 auto; }
+            .hero-label { justify-content: center; }
+            .hero-certs { justify-content: center; }
+            .hero-desc { margin: 0 auto; }
+            .hero-ctas { justify-content: center; }
 
             .hero-bottom {
                 flex-direction: column;
@@ -1228,7 +1300,7 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Project</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="assets/resume.pdf" class="nav-resume-btn">Resume</a></li>
+            <li><a href="assets/resume.pdf" download="Maria_Patino_Resume.pdf" class="nav-resume-btn">Resume</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -1241,7 +1313,7 @@
     <a href="#experience" onclick="closeMobile()">Experience</a>
     <a href="#projects" onclick="closeMobile()">Project</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
-    <a href="assets/resume.pdf" onclick="closeMobile()">Resume</a>
+    <a href="assets/resume.pdf" download="Maria_Patino_Resume.pdf" onclick="closeMobile()">Resume</a>
 </div>
 
 <!-- HERO -->
@@ -1251,12 +1323,14 @@
     <div class="hero-blob hero-blob-3"></div>
 
     <div class="hero-inner">
-        <div class="hero-label">Engineering Program Manager</div>
-        <h1 class="hero-name">
-            <span class="line"><span class="line-inner"><span class="gradient-text">Maria</span></span></span>
-            <span class="line"><span class="line-inner"><span class="italic gradient-text">Patino</span></span></span>
-        </h1>
-        <div class="hero-bottom">
+        <div class="hero-name-row">
+            <div class="hero-label">Engineering Program Manager</div>
+            <h1 class="hero-name">
+                <span class="line"><span class="line-inner"><span class="gradient-text">Maria</span></span></span>
+                <span class="line"><span class="line-inner"><span class="italic gradient-text">Patino</span></span></span>
+            </h1>
+        </div>
+        <div class="hero-columns">
             <div>
                 <div class="hero-certs">
                     <span class="hero-cert">PSM I Certified</span>
@@ -1266,13 +1340,18 @@
                 <p class="hero-desc">
                     I manage P0 programs across 10+ engineers at Apple, building Agile processes from scratch and shipping the tools that help teams deliver with confidence.
                 </p>
+                <div class="hero-ctas" style="margin-top: 2rem;">
+                    <a href="assets/resume.pdf" download="Maria_Patino_Resume.pdf" class="btn-main btn-gradient">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Resume
+                    </a>
+                    <a href="#contact" class="btn-outline">Let's Talk</a>
+                </div>
             </div>
-            <div class="hero-ctas">
-                <a href="assets/resume.pdf" class="btn-main btn-gradient">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Resume
-                </a>
-                <a href="#contact" class="btn-outline">Let's Talk</a>
+            <div class="hero-visual">
+                <div class="hero-memoji">
+                    <img src="assets/memoji.png" alt="Maria Patino">
+                </div>
             </div>
         </div>
     </div>
@@ -1420,7 +1499,7 @@
 <!-- EXPERIENCE -->
 <section class="experience" id="experience">
     <div class="section-label reveal">Experience</div>
-    <h2 class="section-heading reveal">From the retail floor<br>to the <span class="gradient-text">war room.</span></h2>
+    <h2 class="section-heading reveal">From the retail floor<br>to the <span class="gradient-text">engineering floor.</span></h2>
 
     <div class="exp-grid">
         <div class="exp-item reveal">
@@ -1565,8 +1644,8 @@
         <div class="contact-right">
             <div class="contact-card">
                 <div class="contact-card-avatar">
-                    <!-- Replace with: <img src="assets/memoji.png" alt="Maria"> -->
-                    <span>&#128075;</span>
+                    <!-- Memoji -->
+                    <img src="assets/memoji.png" alt="Maria Patino" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <h4>Maria Patino</h4>
                 <p class="card-role">Engineering Program Manager</p>
