@@ -48,9 +48,11 @@
             scroll-padding-top: 80px;
         }
 
+        html { background: var(--white); }
+
         body {
             font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--white);
+            background: transparent;
             color: var(--dark);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
@@ -186,7 +188,7 @@
             padding: 8rem 3rem 4rem;
             position: relative;
             overflow: hidden;
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.85);
         }
 
         .hero-inner {
@@ -284,6 +286,16 @@
         @keyframes drift {
             0%, 100% { transform: translate(0, 0); }
             50% { transform: translate(20px, -15px); }
+        }
+
+        /* Interactive wave canvas */
+        #wave-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 1;
         }
 
         .hero-label {
@@ -562,7 +574,7 @@
         /* ============================================
            BENTO - ABOUT
            ============================================ */
-        .about { background: var(--white); }
+        .about { background: rgba(255, 255, 255, 0.85); }
 
         .bento {
             display: grid;
@@ -835,7 +847,7 @@
         /* ============================================
            PROJECT
            ============================================ */
-        .project-section { background: var(--white); }
+        .project-section { background: rgba(255, 255, 255, 0.85); }
 
         .project-card {
             max-width: 1200px;
@@ -956,6 +968,43 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
             position: relative;
             z-index: 1;
+        }
+
+        /* Screenshot gallery */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .project-gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border: 1px solid var(--bg-3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .project-gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+        }
+
+        .project-gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .project-gallery-item .gallery-label {
+            padding: 0.75rem 1rem;
+            background: var(--white);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray-4);
         }
 
         .pv-placeholder {
@@ -1252,6 +1301,7 @@
 
             .project-card { grid-template-columns: 1fr; }
             .project-visual { min-height: 300px; }
+            .project-gallery { grid-template-columns: 1fr; }
             .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
 
             footer {
@@ -1289,6 +1339,7 @@
 </head>
 <body>
 
+<canvas id="wave-canvas"></canvas>
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- NAV -->
@@ -1503,10 +1554,10 @@
 
     <div class="exp-grid">
         <div class="exp-item reveal">
-            <div class="exp-date">2024 &ndash; 2026</div>
+            <div class="exp-date">Feb 2025 &ndash; Present</div>
             <div>
-                <h3 class="exp-role">Engineering Program Manager</h3>
-                <p class="exp-company">Apple &mdash; People Engineering Services (via Red Oak)</p>
+                <h3 class="exp-role">Technical Project Manager</h3>
+                <p class="exp-company">Apple &mdash; People Engineering Services (via Red Oak Technology)</p>
                 <ul class="exp-bullets">
                     <li>Manage P0 programs coordinating 10+ engineers across Engineering, Product, and Business teams</li>
                     <li>Established Agile methodology and sprint processes from scratch for a team with no prior framework</li>
@@ -1520,9 +1571,9 @@
         </div>
 
         <div class="exp-item reveal">
-            <div class="exp-date">2023 &ndash; 2024</div>
+            <div class="exp-date">Aug 2024 &ndash; Feb 2025</div>
             <div>
-                <h3 class="exp-role">PMO Intern</h3>
+                <h3 class="exp-role">Engineering Project Manager Intern</h3>
                 <p class="exp-company">Apple &mdash; People Engineering Services</p>
                 <ul class="exp-bullets">
                     <li>Standardized PMO documentation and established consistent templates across the organization</li>
@@ -1535,9 +1586,9 @@
         </div>
 
         <div class="exp-item reveal">
-            <div class="exp-date">2022 &ndash; 2023</div>
+            <div class="exp-date">Feb 2023 &ndash; Feb 2024</div>
             <div>
-                <h3 class="exp-role">Operations Manager</h3>
+                <h3 class="exp-role">Member Experience Associate</h3>
                 <p class="exp-company">Industrious &mdash; Premium Co-Working</p>
                 <ul class="exp-bullets">
                     <li>Managed cross-functional operations and member experience for a 500+ member community</li>
@@ -1550,7 +1601,7 @@
         </div>
 
         <div class="exp-item reveal">
-            <div class="exp-date">2019 &ndash; 2022</div>
+            <div class="exp-date">Aug 2021 &ndash; Feb 2023</div>
             <div>
                 <h3 class="exp-role">Technical Specialist</h3>
                 <p class="exp-company">Apple Retail</p>
@@ -1604,11 +1655,26 @@
             <a href="#contact" class="btn-main btn-gradient" style="width: fit-content;">Interested? Let's talk</a>
         </div>
         <div class="project-visual">
-            <!-- Replace with: <img src="assets/minime-screenshot.png" alt="MiniMe App"> -->
-            <div class="pv-placeholder">
-                <div class="pv-icon">&#128187;</div>
-                <p>Screenshot coming soon</p>
-            </div>
+            <img src="assets/minime-dashboard.png" alt="MiniMe Dashboard">
+        </div>
+    </div>
+
+    <div class="project-gallery reveal">
+        <div class="project-gallery-item">
+            <img src="assets/minime-projects.png" alt="MiniMe Project Tracking">
+            <div class="gallery-label">Project Tracking</div>
+        </div>
+        <div class="project-gallery-item">
+            <img src="assets/minime-kanban.png" alt="MiniMe Kanban Board">
+            <div class="gallery-label">Kanban Board</div>
+        </div>
+        <div class="project-gallery-item">
+            <img src="assets/minime-dashboard.png" alt="MiniMe Home Dashboard">
+            <div class="gallery-label">Home Dashboard</div>
+        </div>
+        <div class="project-gallery-item">
+            <img src="assets/minime-meeting.png" alt="MiniMe Meeting Notes">
+            <div class="gallery-label">Meeting Notes</div>
         </div>
     </div>
 </section>
@@ -1723,6 +1789,74 @@
     }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+    // Interactive wave background
+    (function() {
+        var canvas = document.getElementById('wave-canvas');
+        var ctx = canvas.getContext('2d');
+        var mouseX = 0, mouseY = 0;
+        var scrollY = 0;
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        window.addEventListener('scroll', function() {
+            scrollY = window.pageYOffset;
+        });
+
+        var waves = [
+            { color: 'rgba(0, 122, 255, 0.12)', amplitude: 60, frequency: 0.003, speed: 0.02, yOffset: 0.25 },
+            { color: 'rgba(88, 86, 214, 0.10)', amplitude: 50, frequency: 0.004, speed: 0.015, yOffset: 0.35 },
+            { color: 'rgba(175, 82, 222, 0.09)', amplitude: 45, frequency: 0.005, speed: 0.025, yOffset: 0.45 },
+            { color: 'rgba(255, 45, 85, 0.08)', amplitude: 55, frequency: 0.0035, speed: 0.018, yOffset: 0.55 },
+        ];
+
+        var time = 0;
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            var mouseInfluence = (mouseX / canvas.width - 0.5) * 30;
+            var scrollOffset = scrollY * 0.15;
+
+            for (var w = 0; w < waves.length; w++) {
+                var wave = waves[w];
+                ctx.beginPath();
+                var baseY = canvas.height * wave.yOffset - scrollOffset * (0.5 + w * 0.15);
+
+                ctx.moveTo(0, canvas.height);
+                ctx.lineTo(0, baseY);
+
+                for (var x = 0; x <= canvas.width; x += 3) {
+                    var distFromMouse = Math.abs(x - mouseX);
+                    var mouseBump = Math.max(0, 1 - distFromMouse / 300) * 25 * Math.sin(time * 3 + x * 0.01);
+                    var y = baseY + Math.sin(x * wave.frequency + time * wave.speed * 60) * wave.amplitude
+                        + Math.sin(x * wave.frequency * 1.5 + time * wave.speed * 40) * wave.amplitude * 0.5
+                        + mouseInfluence * Math.sin(x * 0.005 + time * 0.03 * 60)
+                        + mouseBump;
+                    ctx.lineTo(x, y);
+                }
+
+                ctx.lineTo(canvas.width, canvas.height);
+                ctx.closePath();
+                ctx.fillStyle = wave.color;
+                ctx.fill();
+            }
+
+            time += 0.016;
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    })();
 </script>
 </body>
 </html>
