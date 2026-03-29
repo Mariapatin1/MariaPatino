@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maria Patino &mdash; Engineering Program Manager</title>
+    <meta name="description" content="Engineering Program Manager at Apple. I manage P0 programs across 10+ engineers, build Agile processes from scratch, and ship the tools that help teams deliver. PSM I Certified.">
+    <meta property="og:title" content="Maria Patino — Engineering Program Manager">
+    <meta property="og:description" content="I manage P0 programs across 10+ engineers at Apple, building Agile processes from scratch and shipping the tools that help teams deliver with confidence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mariapatin1.github.io/MariaPatino/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maria Patino — Engineering Program Manager">
+    <meta name="twitter:description" content="Engineering Program Manager at Apple. Building Agile processes from scratch and shipping tools that help teams deliver.">
+    <meta name="theme-color" content="#007AFF">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23007AFF'/><stop offset='100%25' stop-color='%23AF52DE'/></linearGradient></defs><text y='.9em' font-size='90' font-family='serif' fill='url(%23g)'>M</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -188,6 +198,7 @@
             padding: 8rem 3rem 4rem;
             position: relative;
             overflow: hidden;
+            overflow: hidden;
             background: rgba(255, 255, 255, 0.85);
         }
 
@@ -290,12 +301,11 @@
 
         /* Interactive wave canvas */
         #wave-canvas {
-            position: fixed;
+            position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             pointer-events: none;
             z-index: 0;
-            opacity: 1;
         }
 
         .hero-label {
@@ -372,10 +382,10 @@
 
         .hero-desc {
             max-width: 500px;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             line-height: 1.75;
-            color: var(--gray-4);
-            font-weight: 400;
+            color: var(--dark);
+            font-weight: 500;
         }
 
         .hero-certs {
@@ -794,9 +804,111 @@
         /* ============================================
            GRADIENT CTA BAND
            ============================================ */
+
+        /* ============================================
+           TESTIMONIALS
+           ============================================ */
+        .testimonials {
+            background: var(--bg);
+        }
+
+        .testimonial-grid {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border: 1px solid var(--bg-3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--gray-1);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--grad-accent);
+            opacity: 0;
+            transition: opacity 0.4s;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .testimonial-card:hover::before { opacity: 1; }
+
+        .testimonial-quote-mark {
+            font-family: 'Instrument Serif', serif;
+            font-size: 4rem;
+            line-height: 1;
+            background: var(--grad-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--gray-4);
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 1.75rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--bg-3);
+        }
+
+        .testimonial-avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: var(--grad-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .testimonial-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-role {
+            font-size: 0.72rem;
+            color: var(--gray-3);
+        }
+
+        @media (max-width: 700px) {
+            .testimonial-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           GRADIENT CTA BAND (continued)
+           ============================================ */
         .cta-band {
-            background: var(--grad-hero);
-            padding: 4rem 3rem;
+            background: #2d1b69;
+            padding: 5rem 3rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -806,12 +918,12 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, transparent 100%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(175, 82, 222, 0.15) 0%, transparent 70%);
         }
 
         .cta-band-text {
             font-family: 'Instrument Serif', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
             color: white;
             font-weight: 400;
             letter-spacing: -0.02em;
@@ -841,7 +953,7 @@
 
         .cta-band .btn-white:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         /* ============================================
@@ -947,11 +1059,14 @@
         .project-visual {
             background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 500px;
             position: relative;
             overflow: hidden;
+            padding: 2rem;
+            gap: 1.25rem;
         }
 
         .project-visual::before {
@@ -961,50 +1076,140 @@
             background: radial-gradient(ellipse at 70% 50%, rgba(88, 86, 214, 0.08) 0%, transparent 60%);
         }
 
-        .project-visual img {
-            max-width: 85%;
-            max-height: 400px;
+        .project-visual-main {
+            max-width: 90%;
+            max-height: 340px;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
             position: relative;
             z-index: 1;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
         }
 
-        /* Screenshot gallery */
-        .project-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
+        .project-thumbs {
+            display: flex;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .project-gallery-item {
-            border-radius: 16px;
+        .project-thumb {
+            width: 56px;
+            height: 38px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-            border: 1px solid var(--bg-3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
             cursor: pointer;
+            transition: all 0.3s;
+            opacity: 0.5;
         }
 
-        .project-gallery-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+        .project-thumb.active {
+            border-color: var(--blue);
+            opacity: 1;
+            box-shadow: 0 2px 8px rgba(0, 122, 255, 0.25);
         }
 
-        .project-gallery-item img {
+        .project-thumb:hover {
+            opacity: 0.85;
+        }
+
+        .project-thumb img {
             width: 100%;
-            display: block;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .project-gallery-item .gallery-label {
-            padding: 0.75rem 1rem;
-            background: var(--white);
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .lightbox.open {
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 75vh;
+            border-radius: 16px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
             font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: var(--gray-4);
+            color: rgba(255,255,255,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-prev { left: 1.5rem; }
+        .lightbox-next { right: 1.5rem; }
+
+        .lightbox-counter {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.1em;
         }
 
         .pv-placeholder {
@@ -1203,6 +1408,19 @@
             box-shadow: 0 8px 30px rgba(88, 86, 214, 0.35);
         }
 
+        .contact-card .btn-outline-dark {
+            width: 100%;
+            justify-content: center;
+            border-color: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .contact-card .btn-outline-dark:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            background: rgba(0, 122, 255, 0.08);
+        }
+
         /* ============================================
            FOOTER
            ============================================ */
@@ -1301,7 +1519,6 @@
 
             .project-card { grid-template-columns: 1fr; }
             .project-visual { min-height: 300px; }
-            .project-gallery { grid-template-columns: 1fr; }
             .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
 
             footer {
@@ -1339,17 +1556,18 @@
 </head>
 <body>
 
-<canvas id="wave-canvas"></canvas>
-<div class="cursor-glow" id="cursorGlow"></div>
+<a href="#about" class="skip-nav" style="position:absolute;top:-100%;left:0;padding:0.75rem 1.5rem;background:var(--blue);color:white;font-size:0.85rem;font-weight:600;border-radius:0 0 8px 0;z-index:10000;transition:top 0.2s;" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">Skip to content</a>
+
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
 <!-- NAV -->
-<nav id="navbar">
+<nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-        <a href="#hero" class="nav-name">Maria Patino</a>
+        <a href="#hero" class="nav-name">Maria Patino Manjarres</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Project</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="assets/resume.pdf" download="Maria_Patino_Resume.pdf" class="nav-resume-btn">Resume</a></li>
         </ul>
@@ -1362,13 +1580,14 @@
 <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#experience" onclick="closeMobile()">Experience</a>
-    <a href="#projects" onclick="closeMobile()">Project</a>
+    <a href="#projects" onclick="closeMobile()">Projects</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
     <a href="assets/resume.pdf" download="Maria_Patino_Resume.pdf" onclick="closeMobile()">Resume</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
+    <canvas id="wave-canvas" aria-hidden="true"></canvas>
     <div class="hero-blob hero-blob-1"></div>
     <div class="hero-blob hero-blob-2"></div>
     <div class="hero-blob hero-blob-3"></div>
@@ -1389,7 +1608,7 @@
                     <span class="hero-cert">SFSU &mdash; BA Comm Studies</span>
                 </div>
                 <p class="hero-desc">
-                    I manage P0 programs across 10+ engineers at Apple, building Agile processes from scratch and shipping the tools that help teams deliver with confidence.
+                    I bring order to ambiguity. From standing up Agile processes where none existed to shipping AI-powered tools that reimagine how PMs work &mdash; I don't just keep programs on track, I make them better.
                 </p>
                 <div class="hero-ctas" style="margin-top: 2rem;">
                     <a href="assets/resume.pdf" download="Maria_Patino_Resume.pdf" class="btn-main btn-gradient">
@@ -1413,7 +1632,7 @@
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee-section">
+<div class="marquee-section" aria-hidden="true">
     <div class="marquee-track">
         <div class="marquee-item"><span class="marquee-text">Program Management</span><span class="marquee-dot"></span></div>
         <div class="marquee-item"><span class="marquee-text">Agile / Scrum</span><span class="marquee-dot"></span></div>
@@ -1441,15 +1660,15 @@
 <!-- ABOUT -->
 <section class="about" id="about">
     <div class="section-label reveal">About</div>
-    <h2 class="section-heading reveal">I turn ambiguity into<br><span class="gradient-text">shipped products.</span></h2>
+    <h2 class="section-heading reveal">I turn ambiguity into<br><span class="gradient-text">what comes next.</span></h2>
 
     <div class="bento">
         <div class="bento-card bento-wide reveal">
             <div class="bento-label">Who I Am</div>
             <div class="bento-text">
-                <p>Programs don't ship themselves &mdash; people do. I'm an Engineering Program Manager who thrives in the space between strategy and execution. At Apple, I manage <strong>P0 programs</strong> across Engineering, Product, and Business teams, building Agile processes from the ground up where none existed before.</p>
+                <p>I'm a <strong>Year Up alum</strong> who started on the Apple Retail floor, worked through operations and community management, and earned my way into engineering program management. That non-linear path is my superpower &mdash; I know how to read a room, solve problems on the fly, and bring people together across every level of an org.</p>
                 <br>
-                <p>I'm a <strong>Year Up alum</strong> who started on the Apple Retail floor, worked through operations and community management, and earned my way into engineering program management. That non-linear journey is my superpower &mdash; I know how to read a room, solve problems on the fly, and bring people together.</p>
+                <p>Now I'm channeling that energy into <strong>AI</strong>. I believe the next generation of program management won't just be about tracking work &mdash; it'll be about intelligent systems that surface risks before they happen, automate the busywork, and let PMs focus on what actually matters: people and strategy. I'm not waiting for that future. <strong>I'm building it.</strong></p>
             </div>
         </div>
 
@@ -1474,26 +1693,26 @@
         <div class="bento-card reveal">
             <div class="bento-stat">
                 <div>
-                    <div class="bento-stat-number">10%</div>
-                    <div class="bento-stat-label">Reduction in meeting overhead</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bento-card reveal">
-            <div class="bento-stat">
-                <div>
-                    <div class="bento-stat-number">4+</div>
-                    <div class="bento-stat-label">Concurrent programs managed</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bento-card reveal">
-            <div class="bento-stat">
-                <div>
                     <div class="bento-stat-number">6-Fig</div>
                     <div class="bento-stat-label">Program budgets owned</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-card reveal">
+            <div class="bento-stat">
+                <div>
+                    <div class="bento-stat-number">94+</div>
+                    <div class="bento-stat-label">NPS score at Industrious</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-card reveal">
+            <div class="bento-stat">
+                <div>
+                    <div class="bento-stat-number">500+</div>
+                    <div class="bento-stat-label">Member community managed</div>
                 </div>
             </div>
         </div>
@@ -1518,32 +1737,6 @@
             </div>
         </div>
 
-        <div class="bento-card reveal">
-            <div class="bento-stat">
-                <div>
-                    <div class="bento-stat-number">94+</div>
-                    <div class="bento-stat-label">NPS score at Industrious</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bento-card reveal">
-            <div class="bento-stat">
-                <div>
-                    <div class="bento-stat-number">500+</div>
-                    <div class="bento-stat-label">Member community managed</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bento-card reveal">
-            <div class="bento-stat">
-                <div>
-                    <div class="bento-stat-number">3+</div>
-                    <div class="bento-stat-label">Years in Apple ecosystem</div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -1624,16 +1817,17 @@
 
 <!-- PROJECT -->
 <section class="project-section" id="projects">
-    <div class="section-label reveal">Featured Project</div>
+    <div class="section-label reveal">Projects</div>
     <h2 class="section-heading reveal">Built from scratch,<br><span class="gradient-text">shipped to production.</span></h2>
 
+    <!-- Project 1: MiniMe (Hero Project) -->
     <div class="project-card reveal">
         <div class="project-info">
-            <div class="project-eyebrow">Solo Build &mdash; Concept to Production</div>
+            <div class="project-eyebrow">Signature Build &mdash; Concept to Production</div>
             <h3 class="project-name">MiniMe</h3>
             <p class="project-tagline">AI-Powered PM Assistant &mdash; Desktop App</p>
             <p class="project-desc">
-                Designed and built from scratch to solve real pain points in my daily workflow. Full desktop application combining task management, calendar integration, AI-powered chat, Slack drafting, meeting prep, and a live sprint dashboard. Owned the entire product lifecycle end-to-end.
+                As a PM, I spent hours every week context-switching between Radar, Slack, calendars, and meeting notes. So I built the tool I wished existed. MiniMe is a full desktop application I designed and shipped end-to-end &mdash; from identifying the pain points, to architecting the system, to delivering a production DMG. It uses Claude AI to draft messages, prep meetings, and surface what matters across my entire workflow in one place.
             </p>
             <div class="project-feats">
                 <span class="project-feat">Live sprint dashboard via Radar API</span>
@@ -1655,29 +1849,81 @@
             <a href="#contact" class="btn-main btn-gradient" style="width: fit-content;">Interested? Let's talk</a>
         </div>
         <div class="project-visual">
-            <img src="assets/minime-dashboard.png" alt="MiniMe Dashboard">
+            <img class="project-visual-main" id="projectMainImg" src="assets/minime-dashboard.png" alt="MiniMe Dashboard" onclick="openLightbox(0)" style="cursor:pointer;">
+            <div class="project-thumbs">
+                <div class="project-thumb active" onclick="switchProjectImg(0, this)">
+                    <img src="assets/minime-dashboard.png" alt="Dashboard">
+                </div>
+                <div class="project-thumb" onclick="switchProjectImg(1, this)">
+                    <img src="assets/minime-projects.png" alt="Projects">
+                </div>
+                <div class="project-thumb" onclick="switchProjectImg(2, this)">
+                    <img src="assets/minime-kanban.png" alt="Kanban">
+                </div>
+                <div class="project-thumb" onclick="switchProjectImg(3, this)">
+                    <img src="assets/minime-meeting.png" alt="Meetings">
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="project-gallery reveal">
-        <div class="project-gallery-item">
-            <img src="assets/minime-projects.png" alt="MiniMe Project Tracking">
-            <div class="gallery-label">Project Tracking</div>
+    <!-- Project 2: Portfolio Site -->
+    <div class="project-card reveal" style="margin-top: 2.5rem;">
+        <div class="project-info">
+            <div class="project-eyebrow">Personal Build &mdash; Design + Development</div>
+            <h3 class="project-name">This Portfolio</h3>
+            <p class="project-tagline">Designed &amp; coded from scratch &mdash; no templates</p>
+            <p class="project-desc">
+                I didn't use a website builder or a template &mdash; I vibe coded the entire thing. Using Claude Code as my development partner, I directed the design vision, iterated on layouts in real-time, and shipped a polished product through GitHub Pages. This site is proof that you don't need to be a frontend engineer to build like one &mdash; you just need taste, tools, and the drive to ship.
+            </p>
+            <div class="project-feats">
+                <span class="project-feat">Interactive canvas animation</span>
+                <span class="project-feat">Responsive bento layout</span>
+                <span class="project-feat">Lightbox image gallery</span>
+                <span class="project-feat">AI-assisted development</span>
+                <span class="project-feat">Scroll-reveal animations</span>
+                <span class="project-feat">Deployed on GitHub Pages</span>
+            </div>
+            <div class="project-stack">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Vanilla JS</span>
+                <span>Canvas API</span>
+                <span>Claude Code</span>
+                <span>GitHub Pages</span>
+            </div>
+            <a href="https://github.com/Mariapatin1/MariaPatino" target="_blank" rel="noopener" class="btn-main btn-gradient" style="width: fit-content;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Source
+            </a>
         </div>
-        <div class="project-gallery-item">
-            <img src="assets/minime-kanban.png" alt="MiniMe Kanban Board">
-            <div class="gallery-label">Kanban Board</div>
-        </div>
-        <div class="project-gallery-item">
-            <img src="assets/minime-dashboard.png" alt="MiniMe Home Dashboard">
-            <div class="gallery-label">Home Dashboard</div>
-        </div>
-        <div class="project-gallery-item">
-            <img src="assets/minime-meeting.png" alt="MiniMe Meeting Notes">
-            <div class="gallery-label">Meeting Notes</div>
+        <div class="project-visual">
+            <div class="pv-placeholder" style="position:relative;z-index:1;">
+                <div style="font-size:4rem;margin-bottom:1rem;background:var(--grad-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Instrument Serif',serif;">MP</div>
+                <p style="font-size:0.85rem;color:var(--gray-3);max-width:200px;margin:0 auto;line-height:1.6;">You're looking at it right now.</p>
+            </div>
         </div>
     </div>
+
+    <!-- What I'm Exploring Next -->
+    <div class="reveal" style="margin-top: 4rem; padding: 3.5rem; background: var(--dark); border-radius: 24px; position: relative; overflow: hidden;">
+        <div style="position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle, rgba(0,122,255,0.12) 0%, transparent 70%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:-80px;left:-80px;width:250px;height:250px;background:radial-gradient(circle, rgba(175,82,222,0.08) 0%, transparent 70%);pointer-events:none;"></div>
+        <div class="section-label" style="color:var(--teal);">What's Next</div>
+        <p style="font-family:'Instrument Serif',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:white;letter-spacing:-0.02em;margin-bottom:1rem;max-width:700px;line-height:1.25;">I'm exploring the intersection of <span class="gradient-text">AI and program management.</span></p>
+        <p style="font-size:0.92rem;color:rgba(255,255,255,0.5);max-width:600px;line-height:1.8;">What if your PM tools could predict risks before they surface? Draft status updates from real-time data? Flag blockers before standup? That's the future I'm building toward &mdash; and MiniMe is just the starting point.</p>
+    </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close gallery">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)" aria-label="Previous image">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)" aria-label="Next image">&#8250;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -1687,7 +1933,7 @@
     <div class="contact-layout reveal">
         <div class="contact-left">
             <h3>Currently exploring<br>new opportunities</h3>
-            <p>Looking for full-time roles in Engineering Program Management, Technical PM, or Operations PM. If you're building something that matters &mdash; let's connect.</p>
+            <p>I'm looking for roles where I can bring AI into how teams plan, build, and ship &mdash; whether that's Engineering Program Management, Technical PM, or Product Operations. If you're building something at the intersection of AI and execution, let's connect.</p>
             <div class="contact-methods">
                 <a href="mailto:marpatino@live.com" class="contact-method">
                     <span class="contact-method-icon">&#9993;</span>
@@ -1711,7 +1957,7 @@
             <div class="contact-card">
                 <div class="contact-card-avatar">
                     <!-- Memoji -->
-                    <img src="assets/memoji.png" alt="Maria Patino" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="assets/memoji.png" alt="Maria Patino memoji avatar" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <h4>Maria Patino</h4>
                 <p class="card-role">Engineering Program Manager</p>
@@ -1719,9 +1965,13 @@
                     <span class="status-dot"></span>
                     Open to opportunities
                 </div>
-                <a href="mailto:marpatino@live.com" class="btn-main">
+                <a href="mailto:marpatino@live.com" class="btn-main" style="margin-bottom: 0.75rem;">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     Send me an email
+                </a>
+                <a href="assets/resume.pdf" download="Maria_Patino_Resume.pdf" class="btn-outline btn-outline-dark">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download Resume
                 </a>
             </div>
         </div>
@@ -1732,8 +1982,8 @@
 <footer>
     <p>&copy; 2026 Maria Patino</p>
     <div class="footer-links">
-        <a href="https://www.linkedin.com/in/maria-patino-manjarres" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Mariapatin1" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/maria-patino-manjarres" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Mariapatin1" target="_blank" rel="noopener">GitHub</a>
         <a href="mailto:marpatino@live.com">Email</a>
     </div>
 </footer>
@@ -1790,16 +2040,82 @@
 
     document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
+    // Lightbox gallery
+    var lbImages = [
+        { src: 'assets/minime-dashboard.png', label: 'Home Dashboard' },
+        { src: 'assets/minime-projects.png', label: 'Project Tracking' },
+        { src: 'assets/minime-kanban.png', label: 'Kanban Board' },
+        { src: 'assets/minime-meeting.png', label: 'Meeting Notes' }
+    ];
+    var lbIndex = 0;
+    var lightbox = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightboxImg');
+    var lbCaption = document.getElementById('lightboxCaption');
+    var lbCounter = document.getElementById('lightboxCounter');
+    var projectMainImg = document.getElementById('projectMainImg');
+
+    function switchProjectImg(i, thumbEl) {
+        projectMainImg.style.opacity = '0';
+        setTimeout(function() {
+            projectMainImg.src = lbImages[i].src;
+            projectMainImg.alt = lbImages[i].label;
+            projectMainImg.style.opacity = '1';
+        }, 150);
+        document.querySelectorAll('.project-thumb').forEach(function(t) { t.classList.remove('active'); });
+        if (thumbEl) thumbEl.classList.add('active');
+        lbIndex = i;
+    }
+
+    function openLightbox(i) {
+        lbIndex = i;
+        updateLightbox();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function navLightbox(dir) {
+        lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
+        updateLightbox();
+    }
+
+    function updateLightbox() {
+        lbImg.src = lbImages[lbIndex].src;
+        lbImg.alt = lbImages[lbIndex].label;
+        lbCaption.textContent = lbImages[lbIndex].label;
+        lbCounter.textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+    }
+
+    // Close on backdrop click
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard nav
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navLightbox(-1);
+        if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
     // Interactive wave background
     (function() {
         var canvas = document.getElementById('wave-canvas');
         var ctx = canvas.getContext('2d');
+        var hero = document.getElementById('hero');
         var mouseX = 0, mouseY = 0;
         var scrollY = 0;
+        var isVisible = true;
+        var animationId = null;
 
         function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = hero.offsetWidth;
+            canvas.height = hero.offsetHeight;
         }
         resize();
         window.addEventListener('resize', resize);
@@ -1811,13 +2127,18 @@
 
         window.addEventListener('scroll', function() {
             scrollY = window.pageYOffset;
+            var shouldBeVisible = scrollY < window.innerHeight * 1.5;
+            if (shouldBeVisible !== isVisible) {
+                isVisible = shouldBeVisible;
+                if (isVisible && !animationId) draw();
+            }
         });
 
         var waves = [
-            { color: 'rgba(0, 122, 255, 0.12)', amplitude: 60, frequency: 0.003, speed: 0.02, yOffset: 0.25 },
-            { color: 'rgba(88, 86, 214, 0.10)', amplitude: 50, frequency: 0.004, speed: 0.015, yOffset: 0.35 },
-            { color: 'rgba(175, 82, 222, 0.09)', amplitude: 45, frequency: 0.005, speed: 0.025, yOffset: 0.45 },
-            { color: 'rgba(255, 45, 85, 0.08)', amplitude: 55, frequency: 0.0035, speed: 0.018, yOffset: 0.55 },
+            { color: 'rgba(0, 122, 255, 0.28)', amplitude: 60, frequency: 0.003, speed: 0.02, yOffset: 0.20 },
+            { color: 'rgba(88, 86, 214, 0.22)', amplitude: 50, frequency: 0.004, speed: 0.015, yOffset: 0.30 },
+            { color: 'rgba(175, 82, 222, 0.18)', amplitude: 45, frequency: 0.005, speed: 0.025, yOffset: 0.40 },
+            { color: 'rgba(255, 45, 85, 0.14)', amplitude: 55, frequency: 0.0035, speed: 0.018, yOffset: 0.50 },
         ];
 
         var time = 0;
@@ -1852,7 +2173,11 @@
             }
 
             time += 0.016;
-            requestAnimationFrame(draw);
+            if (isVisible) {
+                animationId = requestAnimationFrame(draw);
+            } else {
+                animationId = null;
+            }
         }
 
         draw();
