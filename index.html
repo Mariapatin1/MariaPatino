@@ -1936,7 +1936,7 @@
             </a>
         </div>
         <div class="project-visual">
-            <img class="project-visual-main" src="assets/tezcafe-home.png" alt="TezCafe Home" style="cursor:default;">
+            <img class="project-visual-main" src="assets/tezcafe-home.png" alt="TezCafe Home" onclick="openTezcafeLightbox()" style="cursor:pointer;">
         </div>
     </div>
 
@@ -2176,6 +2176,15 @@
         if (e.key === 'ArrowLeft') navLightbox(-1);
         if (e.key === 'ArrowRight') navLightbox(1);
     });
+
+    // TezCafe lightbox
+    function openTezcafeLightbox() {
+        lbImages = [{ src: 'assets/tezcafe-home.png', label: 'TezCafe Home' }];
+        lbIndex = 0;
+        updateLightbox();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
 
     // Interactive wave background
     (function() {
