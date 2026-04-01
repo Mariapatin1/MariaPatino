@@ -1936,18 +1936,7 @@
             </a>
         </div>
         <div class="project-visual">
-            <img class="project-visual-main" id="tezcafeMainImg" src="assets/tezcafe-home.png" alt="TezCafe Home" onclick="openTezcafeLightbox(0)" style="cursor:pointer;">
-            <div class="project-thumbs">
-                <div class="project-thumb active" onclick="switchTezcafeImg(0, this)">
-                    <img src="assets/tezcafe-home.png" alt="Home">
-                </div>
-                <div class="project-thumb" onclick="switchTezcafeImg(1, this)">
-                    <img src="assets/tezcafe-about.png" alt="About">
-                </div>
-                <div class="project-thumb" onclick="switchTezcafeImg(2, this)">
-                    <img src="assets/tezcafe-admin.png" alt="Admin">
-                </div>
-            </div>
+            <img class="project-visual-main" src="assets/tezcafe-home.png" alt="TezCafe Home" style="cursor:default;">
         </div>
     </div>
 
@@ -2187,34 +2176,6 @@
         if (e.key === 'ArrowLeft') navLightbox(-1);
         if (e.key === 'ArrowRight') navLightbox(1);
     });
-
-    // TezCafe project gallery
-    var tcImages = [
-        { src: 'assets/tezcafe-home.png', label: 'TezCafe Home' },
-        { src: 'assets/tezcafe-about.png', label: 'Our Story' },
-        { src: 'assets/tezcafe-admin.png', label: 'Admin Dashboard' }
-    ];
-    var tcMainImg = document.getElementById('tezcafeMainImg');
-
-    function switchTezcafeImg(i, thumbEl) {
-        tcMainImg.style.opacity = '0';
-        setTimeout(function() {
-            tcMainImg.src = tcImages[i].src;
-            tcMainImg.alt = tcImages[i].label;
-            tcMainImg.style.opacity = '1';
-        }, 150);
-        thumbEl.parentElement.querySelectorAll('.project-thumb').forEach(function(t) { t.classList.remove('active'); });
-        if (thumbEl) thumbEl.classList.add('active');
-    }
-
-    function openTezcafeLightbox(i) {
-        // Temporarily swap lightbox images to TezCafe set
-        lbImages = tcImages;
-        lbIndex = i;
-        updateLightbox();
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
 
     // Interactive wave background
     (function() {
