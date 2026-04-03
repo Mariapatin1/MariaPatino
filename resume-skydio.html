@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Patino Manjarres — Resume (Skydio)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: letter;
+            margin: 0;
+        }
+
+        body {
+            font-family: Calibri, 'Segoe UI', Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.35;
+            -webkit-font-smoothing: antialiased;
+            background: white;
+            font-size: 11px;
+        }
+
+        .page {
+            max-width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            padding: 0.45in 0.6in;
+        }
+
+        /* Header */
+        .header { text-align: center; margin-bottom: 10px; }
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        .header .contact {
+            font-size: 10px;
+            color: #333;
+        }
+        .header .contact a { color: #333; text-decoration: none; }
+
+        /* Sections */
+        .section { margin-bottom: 10px; }
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 10.5px;
+            color: #1a1a1a;
+            line-height: 1.45;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px 20px;
+        }
+        .skills-grid li {
+            font-size: 10.5px;
+            color: #1a1a1a;
+            list-style: '·  ';
+            margin-left: 6px;
+            line-height: 1.5;
+        }
+
+        /* Experience */
+        .exp-entry { margin-bottom: 8px; }
+        .exp-entry:last-child { margin-bottom: 0; }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .exp-company {
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .exp-date {
+            font-size: 10.5px;
+            color: #1a1a1a;
+            font-style: italic;
+            flex-shrink: 0;
+        }
+        .exp-role {
+            font-size: 10.5px;
+            font-style: italic;
+            color: #333;
+        }
+        .exp-bullets {
+            list-style: '·  ';
+            margin-left: 6px;
+        }
+        .exp-bullets li {
+            font-size: 10.5px;
+            color: #1a1a1a;
+            line-height: 1.45;
+        }
+
+        /* Projects */
+        .proj-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .proj-name {
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .proj-desc {
+            font-size: 10.5px;
+            color: #1a1a1a;
+            line-height: 1.45;
+            margin-top: 1px;
+        }
+
+        /* Education */
+        .edu-entry { margin-bottom: 2px; }
+        .edu-entry .edu-school {
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .edu-entry .edu-detail {
+            font-size: 10.5px;
+            color: #333;
+            font-style: italic;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { padding: 0.45in 0.6in; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <h1>Maria Patino Manjarres</h1>
+        <div class="contact">
+            San Francisco Bay Area &nbsp;|&nbsp; <a href="mailto:marpatino@live.com">marpatino@live.com</a> &nbsp;|&nbsp; 650-544-7368 &nbsp;|&nbsp; <a href="https://linkedin.com/in/maria-patino-manjarres">linkedin.com/in/maria-patino-manjarres</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p class="summary">Cross-functional Program Manager with 4+ years driving execution across Engineering, Product, Operations, and Business teams. Proven track record building repeatable processes from scratch, translating business priorities into scalable programs, and enabling field-facing teams to deliver faster. Combines analytical skills with hands-on program execution in fast-paced technology environments.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Core Skills</div>
+        <ul class="skills-grid">
+            <li>Cross-functional program management & GTM coordination</li>
+            <li>Playbook, process documentation & enablement content creation</li>
+            <li>Stakeholder management across Sales, Engineering & Ops</li>
+            <li>Data analysis, dashboards & performance reporting</li>
+            <li>Onboarding, readiness & rollout program design</li>
+            <li>Budget tracking, forecasting & vendor management</li>
+            <li>Agile/Scrum methodology (PSM I Certified)</li>
+            <li>AI tools: Claude, Claude Code, ChatGPT</li>
+            <li>Strategic project execution in fast-paced environments</li>
+            <li>Bilingual: English & Spanish</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="exp-entry">
+            <div class="exp-header">
+                <span class="exp-company">Apple Inc. (via Red Oak Technology)</span>
+                <span class="exp-date">Feb 2025 – Present</span>
+            </div>
+            <div class="exp-role">Technical Project Manager (Contract)</div>
+            <ul class="exp-bullets">
+                <li>Drive execution across 5 concurrent programs, coordinating 10+ team members across Engineering, Product, and Business Operations on 2-week sprint cycles</li>
+                <li>Translate business priorities into repeatable processes and field-ready resources — designed and implemented Agile framework from scratch for a team with no prior structure, improving delivery time by 20%</li>
+                <li>Build and maintain playbooks, onboarding documentation, sprint readiness checklists, and internal communications used across the organization</li>
+                <li>Built real-time dashboards and reporting cadences that give leadership full visibility into program status, risks, and performance trends</li>
+                <li>Manage budget forecasting and vendor PO processing for 6-figure programs, consolidating spend data and tracking per-team allocations</li>
+            </ul>
+        </div>
+
+        <div class="exp-entry">
+            <div class="exp-header">
+                <span class="exp-company">Apple Inc.</span>
+                <span class="exp-date">Aug 2024 – Feb 2025</span>
+            </div>
+            <div class="exp-role">Engineering Project Manager Intern</div>
+            <ul class="exp-bullets">
+                <li>Standardized program documentation, reporting templates, and workflows across the organization — adopted as standard operating procedure</li>
+                <li>Created vendor budget tracking system that gave leadership visibility into per-team allocations and quarterly spend, enabling data-driven resource decisions</li>
+                <li>Established gate review and release readiness processes that improved cross-team coordination and rollout quality</li>
+            </ul>
+        </div>
+
+        <div class="exp-entry">
+            <div class="exp-header">
+                <span class="exp-company">Industrious</span>
+                <span class="exp-date">Feb 2023 – Feb 2024</span>
+            </div>
+            <div class="exp-role">Member Experience Associate</div>
+            <ul class="exp-bullets">
+                <li>Planned and executed programming and networking events for a 500+ member community, managing end-to-end logistics, vendors, and day-of coordination</li>
+                <li>Analyzed member feedback and satisfaction data to identify trends and drive program improvements, achieving 85+ NPS</li>
+                <li>Managed event budgets and vendor relationships, delivering programs on time and within budget across multiple concurrent workstreams</li>
+            </ul>
+        </div>
+
+        <div class="exp-entry">
+            <div class="exp-header">
+                <span class="exp-company">Apple — Retail</span>
+                <span class="exp-date">Aug 2021 – Feb 2023</span>
+            </div>
+            <div class="exp-role">Technical Specialist</div>
+            <ul class="exp-bullets">
+                <li>Provided technical advising to high-volume, diverse audiences — translating complex product capabilities into clear, actionable next steps</li>
+                <li>Achieved 95 NPS through strong interpersonal skills, active listening, and tailored customer engagement</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Projects</div>
+        <div class="exp-entry">
+            <div class="proj-header">
+                <span class="proj-name">MiniMe — AI-Powered Program Management Assistant</span>
+                <span class="exp-date">2025 – Present</span>
+            </div>
+            <p class="proj-desc">Designed and built a full-stack desktop application (Electron + React) to streamline GTM and PM workflows — integrating task management, calendar syncing, AI-assisted communication drafting, and live operational dashboards. Built entirely using Claude Code.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education & Certifications</div>
+        <div class="edu-entry">
+            <span class="edu-school">San Francisco State University</span> — <span class="edu-detail">Bachelor of Arts, Communication Studies</span>
+        </div>
+        <div class="edu-entry">
+            <span class="edu-school">Year Up United</span> — <span class="edu-detail">Project Management Program</span>
+        </div>
+        <div class="edu-entry">
+            <span class="edu-school">Professional Scrum Master (PSM I)</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
